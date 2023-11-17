@@ -27,7 +27,6 @@ public class CreateSampleEntityWithItemHandler : ICommandHandler<CreateSampleEnt
     {
         var (id, name, gender, DestinationWriteModel) = command;
 
-
         if (await _readService.ExistsByNameAsync(name))
         {
             throw new SampleEntityAlreadyExistsException(name);
@@ -43,4 +42,3 @@ public class CreateSampleEntityWithItemHandler : ICommandHandler<CreateSampleEnt
     }
 
 }
-
